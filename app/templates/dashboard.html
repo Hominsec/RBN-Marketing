@@ -5,92 +5,87 @@
 <link rel="preload" href="{{url_for('static',filename='images/weather_station.jpg')}}" as="image"/>
 <link rel="preload" href="{{url_for('static',filename='images/home_automation.jpg')}}" as="image"/>
 <link rel="preload" href="{{url_for('static',filename='images/load.gif')}}" as="image"/>
-<link rel="preload" href="{{url_for('static',filename='css/images2/web_background.jpg')}}" as="image"/><!--need to compress or find smaller image-->
-<!--<link rel="preload" href="{{url_for('static',filename='images/network.png')}}" as="image"/>--><!--find a smaller image-->
+<link rel="preload" href="{{url_for('static',filename='css/images2/web_background.jpg')}}" as="image"/>
 <link rel="preload" href="{{url_for('static',filename='images/clock.jpg')}}" as="image"/>
 <script src="{{url_for('static',filename='js/dashboard.js')}}"> </script>
 {% endblock %}
 
 {% block main %}
-<h1 id="id2">My Major Projects</h1>
-<hr>
+<h1 class="mb-3" id="id2">My Major Projects</h1>
+<div class="row gy-4">
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item weather_station" id="weather_station">
+      <h4 id="c_test">Weather Station Application</h4>
+      <h5 id="h_phone1"></h5>
+      <div class="ratio ratio-16x9 w-100">
+        <video playsinline autoplay muted id="vid1" poster="">
+          <source id="weather" src="" type="video/mp4">
+        </video>
+      </div>
+      <p id="prompt1"></p>
+      <button type="button" id="b1" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
 
-<ul class="dashboard">
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item home_automation" id="home_automation">
+      <h4 id="h_a">Home Automation System</h4>
+      <h5 id="h_phone2"></h5>
+      <div class="ratio ratio-16x9 w-100">
+        <video playsinline autoplay muted id="vid2" poster="">
+          <source id="auto" src="" type="video/mp4">
+        </video>
+      </div>
+      <p id="prompt6"></p>
+      <button type="button" id="b6" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
 
-		
-		
-		<li class="dashboard_item weather_station" id="weather_station"> <!--temp-->
-			<h4 id="c_test">Weather Station Application </h4>
-			<h5 id="h_phone1"></h5>
-			<video  playsinline autoplay muted id="vid1" poster="">
-				<source id="weather" src="" type="video/mp4">
-			</video>
-			<p id="prompt1"></p><!--Temperature-->
-			
-			<button type="button" id="b1"  >CLick Me</button>	
-		</li>
-		
-		<li class="dashboard_item home_automation" id="home_automation"><!--humidity-->
-			<h4 id="h_a">Home Automation System</h4>
-			<h5 id="h_phone2"></h5>
-			<video  playsinline autoplay muted id="vid2" poster="">
-				<source id="auto" src="" type="video/mp4">
-			</video>
-			<p id="prompt6"></p><!--HUMID-->
-			
-			<button type="button" id="b6"  >CLick Me</button><!--hum_button-->
-			
-		</li>
-		
-		<li class="dashboard_item sockets" id="sockets"><!--alt-->
-			<h4 id="sc">CLI Chat</h4>
-			<h5 id="h_phone3"></h5>
-			<video  playsinline autoplay muted id="vid3" poster="" >
-				<source id="sock" src="" type="video/mp4">
-			</video>
-			<p id="prompt2"></p><!--ALTITUDE-->
-			
-			<button type="button" id="b2"  >Click Me</button><!--alt_button-->
-			
-		</li>
-		
-		<li class="dashboard_item book_keeping" id="book_keeping"><!--humidity-->
-			<h4>Book Keeping Application</h4>
-			<h5 id="h_phone4"></h5>
-			<video  playsinline autoplay muted id="vid4" poster="">
-				<source id="book" src="" type="video/mp4">
-			</video>
-			
-			<p id="prompt4"></p><!--HUMID-->
-			
-			<button type="button" id="b4"  >CLick Me</button><!--hum_button-->
-			
-		</li>
-		
-		<li class="dashboard_item clock_alarm" id="clock_alarm"><!--humidity-->
-			<h4>Clock And Alarm</h4>
-			<h5 id="h_phone5"></h5>
-			
-			<p id="prompt5"></p><!--HUMID-->
-			
-			<button type="button" id="b5"  >CLick Me</button><!--hum_button-->
-			
-		</li>
-		
-		<li class="dashboard_item capstone" id="capstone"><!--humidity-->
-			<h4>Capstone</h4>
-			<h5 id="h_phone6"></h5>
-			
-			<p id="prompt3"></p><!--HUMID-->
-			
-			<button type="button" id="b3"  >CLick Me</button><!--hum_button-->
-			
-		</li>
-		
-		
-		
-		
-		
-</ul>
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item sockets" id="sockets">
+      <h4 id="sc">CLI Chat</h4>
+      <h5 id="h_phone3"></h5>
+      <div class="ratio ratio-16x9 w-100">
+        <video playsinline autoplay muted id="vid3" poster="">
+          <source id="sock" src="" type="video/mp4">
+        </video>
+      </div>
+      <p id="prompt2"></p>
+      <button type="button" id="b2" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item book_keeping" id="book_keeping">
+      <h4>Book Keeping Application</h4>
+      <h5 id="h_phone4"></h5>
+      <div class="ratio ratio-16x9 w-100">
+        <video playsinline autoplay muted id="vid4" poster="">
+          <source id="book" src="" type="video/mp4">
+        </video>
+      </div>
+      <p id="prompt4"></p>
+      <button type="button" id="b4" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item clock_alarm" id="clock_alarm">
+      <h4>Clock And Alarm</h4>
+      <h5 id="h_phone5"></h5>
+      <p id="prompt5"></p>
+      <button type="button" id="b5" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="dashboard_item capstone" id="capstone">
+      <h4>Capstone</h4>
+      <h5 id="h_phone6"></h5>
+      <p id="prompt3"></p>
+      <button type="button" id="b3" class="btn btn-sm btn-primary">Click Me</button>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -10,13 +10,14 @@ background-position: ;/*absolute*/
 	height: 1000px;
 	width: 100%;
 }
-#img1{
-	height: 50px;
-	width: 50px;
+.social-icon{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
 }
-#img1:hover{
-height: 55px;
-width: 55px;
+.social-icon:hover{
+    height: 54px;
+    width: 54px;
 }
 #homebody{
 height:max-height;
