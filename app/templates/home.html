@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block css_js %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}"> 
+<link rel="preload" href="{{url_for('static',filename='css/images2/web_background.jpg')}}" as="image"/>
+<script src="{{url_for('static',filename='js/home.js')}}"></script>
+{% endblock %}
+
+{% block main %}
+<h1>
+<div class="flex-container">
+	<p id="id1" style="font-size:100%;">Welcome To My Website</p> 
+	<!--<img id="face_img" src="{{url_for('static',filename='images/face.jpeg')}}" alt=""></h1>-->
+				
+</div> 
+</h1>
+<hr>
+
+<div >
+		<p id="id1" style="font-size:85%;">On this site you will find all you wish to know about me from a professional perspective.</p> 
+		<p id="id1" style="font-size:85%;">On this page you can access my resume along with a repository of photos that highlight my experience .</p> 
+		<p id="id1" style="font-size:85%;">And on the dashboard, you can witness some of my projects that I choose to show.</p> 
+		<p id="id1" style="font-size:85%;">Feel free to browse around the site using the navbar.</p>  
+		<!--<img id="face_img" src="{{url_for('static',filename='images/face.jpeg')}}" alt=""></h1>-->
+				
+</div> 
+<div >
+		<p id="id1" style="font-size:85%;"><br><br><br><br><br><br></p> 
+		<!--<img id="face_img" src="{{url_for('static',filename='images/face.jpeg')}}" alt=""></h1>-->
+				
+</div> 
+
+<div class="flex-container" id="flex">
+	<button type="button" id="b1" onclick="window.location.href='https://docs.google.com/document/d/1l5XN5TqbzDIIbZCWMwQJL48IS_CYcMsvBme8XK9ZPNo/edit?usp=sharing';" >Resume</button>
+	<button type="button" id="b2" onclick="window.location.href='https://photos.app.goo.gl/MnYMLQn2SR9Jf48Q9';"  >Photos</button>
+	<!--<a href="https://docs.google.com/document/d/1l5XN5TqbzDIIbZCWMwQJL48IS_CYcMsvBme8XK9ZPNo/edit?usp=sharing" id="resume" >Click</a>-->
+				
+</div> 
+<br><br>
+
+<div class="flex-container" id="flex1">
+	<img id="img1" src="{{url_for('static',filename='images/linkedin.svg')}}" onclick="window.location.href='http://www.linkedin.com/in/delroy-robinson-017785229';">
+	<img id="img1" src="{{url_for('static',filename='images/github.svg')}}" onclick="window.location.href='https://github.com/Hominsec';">
+    <img id="img1" src="{{url_for('static',filename='images/instagram.svg')}}" onclick="window.location.href='https://instagram.com/delroy_s_robinson?igshid=OGQ5ZDc2ODk2ZA==';">	
+</div> 
+
+
+
+
+<!--https://docs.google.com/document/d/1l5XN5TqbzDIIbZCWMwQJL48IS_CYcMsvBme8XK9ZPNo/edit?usp=sharing-->
+<!--https://photos.app.goo.gl/MnYMLQn2SR9Jf48Q9-->
+<!--<iframe id="iframepdf" src="{{url_for('static',filename='pdf/Resume.pdf')}}" ></iframe>-->
+{% endblock %}
+ 
+ 
+ <!--
+ 
+	*********  *********       *        ********
+	*			   *          * *       *      *
+ 	*              *         *****      ********
+	*********      *        *     *     *	   *
+			*      *       *       *    *	   *
+  			*      *      *         *   *      *
+    *********      *     *           *  *      *
+	
+ 
+ 
+ -->

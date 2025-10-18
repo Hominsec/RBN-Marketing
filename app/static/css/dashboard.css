@@ -1,0 +1,144 @@
+body{
+background-image: url('images2/web_background.jpg');
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: 100% 100%;
+}
+
+video{
+object-fit:fill;
+height: 100%;
+width: 100%;
+position:absolute;
+top:0;
+left:0;	
+}
+
+
+.dashboard{
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+
+
+}
+.dashboard_item{
+margin: auto;
+width: 350px;/*350%*/
+height: 450px; /*450%*/
+background: #fff;
+background-color: #7CB9E8;
+/*background-color:rgba(255,255,255,0.6);*/
+padding-left: 15px;
+padding-right: 15px;
+border-style:solid;
+border-radius: 7px;
+border-color: 1ECBE1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center ;
+gap: 10px;
+overflow:hidden;
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+position:relative;
+overflow:hidden;
+/*background-image:url("azure.jpg"); background-size:100% 100%;*/
+}
+.dashboard_item > h4{
+margin: 0;
+width:max-width;
+color: black;
+}
+.dashboard_item > button{
+color:black;
+position:relative; /*figure out how to make position of button stationary*/
+border-style:none;
+border-radius: 7px;
+}
+.dashboard_item > button:hover{
+background-color:#1ECBE1;
+color:cornsilk;
+/*box-shadow:0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;*/
+}
+.dashboard_item:hover>h5{
+opacity:0;
+}
+.dashboard_item:hover>h4{
+color:black;
+}
+.dashboard_item>p{
+color:black;
+}
+#weather_station{
+  background-image: url('images2/arduino.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 90% 90%;
+  background-position: 50% 60%;/*absolute*/
+}
+#sockets{
+  background-image: url('images2/python.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 90% 90%;
+  background-position: 50% 60%;
+  /*background-blend-mode:lighten;*/
+}
+#sockets:hover{
+	background-color:rgba(255,255,255,0.5);
+	background-blend-mode:lighten;
+}
+
+#capstone{
+  background-image: url('images2/brain.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 80% 80%;
+  background-position: 50% 60%;
+}
+
+#book_keeping{
+  background-image: url('images2/java.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 80% 80%;
+  background-position: 50% 60%;
+}
+#book_keeping:hover{
+	background-color:rgba(255,255,255,0.5);
+	background-blend-mode:lighten;
+}
+#clock_alarm{
+  background-image: url('images2/electronics.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 80% 80%;
+  background-position: 50% 60%;
+}
+#clock_alarm:hover{
+	background-color:rgba(255,255,255,0.5);
+	background-blend-mode:lighten;
+}
+
+#home_automation{
+  background-image: url('images2/html.svg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 80% 80%;
+  background-position: 50% 60%;
+}
+
+.flex-container{
+display:flex;
+align-items:flex-start;
+gap:2px;
+}
+
+#id2{
+color:black;
+}
+
+.dashboard_item > h5{
+opacity:.4;
+}

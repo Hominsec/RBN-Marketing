@@ -1,0 +1,56 @@
+body{
+/*background-color:#00008B;*/
+background-image: url('images2/web_background.jpg');
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: 100% 100%;
+background-position: ;/*absolute*/
+}
+#iframepdf{
+	height: 1000px;
+	width: 100%;
+}
+#img1{
+	height: 50px;
+	width: 50px;
+}
+#img1:hover{
+height: 55px;
+width: 55px;
+}
+#homebody{
+height:max-height;
+width:max-width;
+background-image: url('images2/self.jpg');
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: 100% 100%;
+background-position: ;/*absolute*/
+}
+#flex{
+display:flex;
+align-items:flex-start;
+gap:25%;/*25%*/
+}
+#flex> button{
+color:black;
+position:relative; /*figure out how to make position of button stationary*/
+border-style:none;
+border-radius: 7px;
+}
+#flex > button:hover{
+background-color:#1ECBE1;
+color:cornsilk;
+box-shadow:0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+}
+#flex1{
+display:flex;
+align-items:flex-start;
+gap:12%;/*25%*/
+}
+#flex1:hover{
+cursor:pointer;
+}
+#id1{
+	color:black;
+}
