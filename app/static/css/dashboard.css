@@ -19,7 +19,7 @@ video{
 .dashboard_item{
   margin: auto;
   width: 100%;
-  min-height: 460px;
+  min-height: 520px;
   background: linear-gradient(135deg, #7CB9E8 0%, #5aa7e0 50%, #3c9ad9 100%);
   padding: 14px 14px 18px 14px;
   border-radius: 16px;
