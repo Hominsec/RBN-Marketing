@@ -2,62 +2,55 @@
 Flask Documentation:     http://flask.pocoo.org/docs/
 Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
-This file creates your application.
- """
-#from app import app, Config
-from flask import render_template, request, redirect, url_for, flash,  session,  send_from_directory,  abort
-from flask import render_template, request, redirect, url_for, flash, session, send_from_directory, abort , jsonify
-from werkzeug.utils import secure_filename
-from werkzeug.security import check_password_hash
+This file defines your application routes.
+"""
+from flask import render_template, request, flash, send_from_directory, jsonify
+from typing import Optional
 from os import getcwd
 from os.path import join
-#from .function import DB,Mqtt
-#mongo = DB(Config)
-from flask import Flask
-#from .config import Config
-#from .function import DB,Mqtt
+from .config import Config
+from . import app
 
-app = Flask(__name__)
-#app.config.from_object(Config)
 
-#from app import app,Config#,Mqtt
-#from app import views
 
+###
+# Helpers
+###
+
+def get_number_from_json(key: str = "number") -> int:
+    data = request.get_json()
+    return int(data[key])
 
 
 ###
 # Routing
 ###
+
 @app.route('/mul', methods=["POST"])
-def mulNumbers():
-    """Return the Product of two numbers"""
+def mul_numbers():
+    """Return the product of two numbers"""
     if request.method == "POST":
-        # Process GET requests
         data = request.get_json()
-        num1 = data["number1"]
-        num2 = data["number2"]
-        mul=int(num1)*int(num2)
-        return f"The product of {num1} and {num2} is {mul}"
+        num1 = int(data["number1"])  # type: ignore[index]
+        num2 = int(data["number2"])  # type: ignore[index]
+        product = num1 * num2
+        return f"The product of {num1} and {num2} is {product}"
     return render_template('404.html'), 404
 
 @app.route('/sum', methods=["GET"])
-def sum2Numbers():
-    """Return the Sum of two numbers"""
+@app.route('/sum/<int:firstnumber>/<int:secondnumber>', methods=["GET"])
+def sum_numbers(firstnumber: Optional[int] = None, secondnumber: Optional[int] = None):
+    """Return the sum from query params or path params"""
     if request.method == "GET":
-        # Process GET requests
+        if firstnumber is not None and secondnumber is not None:
+            summed = firstnumber + secondnumber
+            return f"The sum of {firstnumber} and {secondnumber} is {summed}"
         num1 = request.args.get("number1")
         num2 = request.args.get("number2")
-        summedNumbers = int(num1) + int(num2)
-        return f"The sum of {num1} and {num2} is {summedNumbers}"
-    return render_template('404.html'), 404
-
-@app.route('/sum/<firstnumber>/<secondnumber>', methods=["GET"])
-def sumTwoNumbers(firstnumber, secondnumber):
-    """Return the Sum of two numbers"""
-    if request.method == "GET":
-        # Process GET requests
-        summedNumbers = int(firstnumber) + int(secondnumber)
-        return f"The sum of {firstnumber} and {secondnumber} is {summedNumbers}"
+        if num1 is None or num2 is None:
+            return render_template('404.html'), 404
+        summed = int(num1) + int(num2)
+        return f"The sum of {num1} and {num2} is {summed}"
     return render_template('404.html'), 404
 
 @app.route('/file/<name>', methods=["GET"])
@@ -114,47 +107,48 @@ def dashboard():
 
 @app.route('/data', methods=["GET"])
 def data():
-    #if request.method == "GET":
-        #VARIABLE = request.args.get("HUMIDITY")
-    """ Return data """
+    """Return data from a configured data source (if available)"""
     if request.method == "GET":
-        # Process GET requests
-        VARIABLE = request.args.get("variable")
-        START = int(request.args.get("start"))
-        END = int(request.args.get("end"))
-        data = mongo.plotStaticGraph(VARIABLE,START, END)
-
-        return jsonify(data)
+        variable = request.args.get("variable")
+        start_raw = request.args.get("start")
+        end_raw = request.args.get("end")
+        if variable is None or start_raw is None or end_raw is None:
+            return render_template('404.html'), 404
+        try:
+            start = int(start_raw)
+            end = int(end_raw)
+        except ValueError:
+            return render_template('404.html'), 404
+        try:
+            # Assume a global `mongo` client may be configured elsewhere
+            data_points = mongo.plotStaticGraph(variable, start, end)  # type: ignore[name-defined]
+            return jsonify(data_points)
+        except NameError:
+            return jsonify({"error": "Data source not configured"}), 501
     return render_template('404.html'), 404
 
 @app.route('/temp', methods=["POST"])
-def temptf():
+def temperature_c_to_f():
     if request.method == "POST":
-        # Process GET requests
-        data = request.get_json()
-        num1 = data["number"]
-        temp=((int(num1)*9/5)+32)
-        return f"{num1}℃ is {temp}℉"
+        celsius = get_number_from_json("number")
+        fahrenheit = (celsius * 9 / 5) + 32
+        return f"{celsius}℃ is {fahrenheit}℉"
     return render_template('404.html'), 404
 
 @app.route('/alt', methods=["POST"])
-def altcm():
+def altitude_to_cm():
     if request.method == "POST":
-        # Process GET requests
-        data = request.get_json()
-        num1 = data["number"]
-        temp=int(num1)*100
-        return f"An altitude of {num1}m is also {temp}cm"
+        meters = get_number_from_json("number")
+        centimeters = meters * 100
+        return f"An altitude of {meters}m is also {centimeters}cm"
     return render_template('404.html'), 404
 
 @app.route('/humid', methods=["POST"])
-def humidkg():
+def humidity_to_kg_per_m3():
     if request.method == "POST":
-        # Process GET requests
-        data = request.get_json()
-        num1 = data["number"]
-        temp=int(num1)/1000
-        return f"The humidity of {num1} g/m^3 is also {temp} kg/m^3"
+        grams_per_m3 = get_number_from_json("number")
+        kg_per_m3 = grams_per_m3 / 1000
+        return f"The humidity of {grams_per_m3} g/m^3 is also {kg_per_m3} kg/m^3"
     return render_template('404.html'), 404
 
 

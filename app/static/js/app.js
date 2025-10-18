@@ -1,5 +1,12 @@
 /* Add your Application JavaScript */
 
+// Shared utilities
+window.isMobileDevice = function () {
+  const details = navigator.userAgent;
+  const regexp = /android|iphone|kindle|ipad/i;
+  return regexp.test(details);
+}
+
 window.addEventListener('load', ()=>{
     
 let dropdowns = document.querySelectorAll('.navbar .dropdown-toggler');

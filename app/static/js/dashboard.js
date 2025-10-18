@@ -1,11 +1,6 @@
 window.addEventListener('load',()=>{
 
-console.log("Dashboard loaded_test");
-  var var1 =0;
-  var add1=0;
-  var add2=0;
-  var var2=0;
-  var var3=0;
+console.log("Dashboard loaded");
 
   let inputCard1         = document.querySelector("#One");       // Query by HTML class & element type. Select <p> element
   let inputCard2         = document.querySelector("#Two"); 
@@ -47,27 +42,17 @@ console.log("Dashboard loaded_test");
   let vid4 = document.querySelector("#vid4");
   
   
-let details = navigator.userAgent;
-  
-/* Creating a regular expression 
-containing some mobile devices keywords 
-to search it in details string*/
-let regexp = /android|iphone|kindle|ipad/i;
-  
-/* Using test() method to search regexp in details
-it returns boolean value*/
-let isMobileDevice = regexp.test(details);
-  
-if (isMobileDevice) {
-    console.log("You are using a Mobile Device");
-	h1.innerHTML="Tap Me";
-	h2.innerHTML="Tap Me";
-	h3.innerHTML="Tap Me";
-	h4.innerHTML="Tap Me";
-	h5.innerHTML="Tap Me";
-	h6.innerHTML="Tap Me";
+const isMobile = (typeof window.isMobileDevice === 'function') ? window.isMobileDevice() : false;
+if (isMobile) {
+  console.log("You are using a Mobile Device");
+  h1.innerHTML = "Tap Me";
+  h2.innerHTML = "Tap Me";
+  h3.innerHTML = "Tap Me";
+  h4.innerHTML = "Tap Me";
+  h5.innerHTML = "Tap Me";
+  h6.innerHTML = "Tap Me";
 } else {
-    console.log("You are using a Desktop");
+  console.log("You are using a Desktop");
 }
   
 

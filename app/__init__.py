@@ -1,11 +1,9 @@
 from flask import Flask
 from .config import Config
-#from .function import DB,Mqtt
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-from app import app,Config#,Mqtt
+# Import views after app is created to avoid circular imports
 from app import views
-
 
