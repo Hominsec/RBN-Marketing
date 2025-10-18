@@ -16,7 +16,7 @@ video{
 .dashboard_item{
   margin: auto;
   width: 100%;
-  min-height: 380px;
+  min-height: 460px;
   background: linear-gradient(135deg, #7CB9E8 0%, #5aa7e0 50%, #3c9ad9 100%);
   padding: 14px 14px 18px 14px;
   border-radius: 16px;
@@ -52,14 +52,22 @@ video{
   color:#fff;
   box-shadow: 0 6px 22px rgba(12,42,67,0.3);
 }
-.dashboard_item:hover>h5{
-opacity:0;
+.video-box{
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
 }
 .dashboard_item:hover>h4{
 color:black;
 }
 .dashboard_item>p{
   color:#103a5e;
+  max-height: 4.8em; /* ~3 lines */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 /* Background icons remain but scale better */
 #weather_station{
