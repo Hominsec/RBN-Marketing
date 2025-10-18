@@ -59,14 +59,9 @@ if (isMobile) {
 
   //WEATHER STATION
 Btn1.addEventListener("click",()=>{
-	weatherstation.style.backgroundImage = "";
-	weatherstation.style.backgroundSize = "100% 100%";
-	vid1.style.position = "absolute";
-	vid1.style.top = "0";
-	vid1.style.left = "0";
-	vid1.style.width = "100%";
-	vid1.style.height = "100%";
-	vid1.style.display = "block";
+    weatherstation.style.backgroundImage = "";
+    weatherstation.style.backgroundSize = "100% 100%";
+    vid1.style.display = "block";
 	vid1.src="../static/videos/weather_station.mp4";
 	vid1.poster="../static/images/load.gif";
 	//console.log("Button One Clicked");
@@ -103,14 +98,9 @@ vid1.addEventListener("ended",()=>{
 
 //SOCKETS
 Btn2.addEventListener("click",()=>{
-	sockets.style.backgroundImage = "";
-	sockets.style.backgroundSize = "100% 100%";
-	vid3.style.position = "absolute";
-	vid3.style.top = "0";
-	vid3.style.left = "0";
-	vid3.style.width = "100%";
-	vid3.style.height = "100%";
-	vid3.style.display = "block";
+    sockets.style.backgroundImage = "";
+    sockets.style.backgroundSize = "100% 100%";
+    vid3.style.display = "block";
 	vid3.src="../static/videos/DJSA.mp4";
 	vid3.poster="../static/images/load.gif";
 	///sockets.style.backgroundSize= "100% 100%";
@@ -158,14 +148,9 @@ vid3.addEventListener("ended",()=>{
 
 //BOOK-KEEPING
 Btn4.addEventListener("click",()=>{
-	book_keeping.style.backgroundImage = "";
-	book_keeping.style.backgroundSize = "100% 100%";
-	vid4.style.position = "absolute";
-	vid4.style.top = "0";
-	vid4.style.left = "0";
-	vid4.style.width = "100%";
-	vid4.style.height = "100%";
-	vid4.style.display = "block";
+    book_keeping.style.backgroundImage = "";
+    book_keeping.style.backgroundSize = "100% 100%";
+    vid4.style.display = "block";
 	vid4.src="../static/videos/book_keeping.mp4";
 	vid4.poster="../static/images/load.gif";
 	//console.log("Button One Clicked");
@@ -244,14 +229,9 @@ Btn5.addEventListener("mouseleave",()=>{
 //HOME-AUTOMATION
 Btn6.addEventListener("click",()=>{
 	//console.log("Button Six Clicked");
-	home_automation.style.backgroundImage = "";
-	home_automation.style.backgroundSize = "100% 100%";
-	vid2.style.position = "absolute";
-	vid2.style.top = "0";
-	vid2.style.left = "0";
-	vid2.style.width = "100%";
-	vid2.style.height = "100%";
-	vid2.style.display = "block";
+    home_automation.style.backgroundImage = "";
+    home_automation.style.backgroundSize = "100% 100%";
+    vid2.style.display = "block";
 	vid2.src="../static/videos/home_automation.mp4";
 	vid2.poster="../static/images/load.gif";
 	//home_automation.style.backgroundSize= "100% 100%";
