@@ -1,10 +1,5 @@
 body{
-/*background-color:#00008B;*/
-background-image: url('images2/web_background.jpg');
-background-repeat: no-repeat;
-background-attachment: scroll;
-background-size: 100% 100%;
-background-position: ;/*absolute*/
+  background: linear-gradient(135deg, #0f172a 0%, #111827 40%, #0b1220 100%);
 }
 #iframepdf{
 	height: 1000px;
@@ -19,15 +14,7 @@ background-position: ;/*absolute*/
     height: 54px;
     width: 54px;
 }
-#homebody{
-height:max-height;
-width:max-width;
-background-image: url('images2/self.jpg');
-background-repeat: no-repeat;
-background-attachment: scroll;
-background-size: 100% 100%;
-background-position: ;/*absolute*/
-}
+/* Removed page background image for performance */
 #flex{
 display:flex;
 align-items:flex-start;
