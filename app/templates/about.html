@@ -4,23 +4,20 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}"> 
 <link rel="preload" href="{{url_for('static',filename='css/images2/web_background.jpg')}}" as="image"/>
-<!--
-<script src="{{ url_for('static', filename='js/about.js') }}"></script>
--->
 {% endblock %}
 
 {% block main %}
-
-<div class="aboutblock">
-    <h1 id="id">whoami?</h1>
-	<hr>
-    <!--<img id="aboutimage" src="{{url_for('static',filename='images/undraw_experience_design_re_dmqq.svg')}}" alt="">-->
+<div class="row justify-content-center py-3">
+  <div class="col-12 col-lg-10">
+    <h1 class="mb-3" id="id">whoami?</h1>
+    <hr>
     <p id="id_d">I am Delroy Robinson, a 21 year old UWI student in my final year; pursuing a double major in Computer Science and Electronics.</p> 
-	<p id="id_d">As will be made clear from the projects shown on this website, I have a passion for creating technology, whether it be software or hardware or a combination of both. It is my dream to align my passion with my career; I imagine very few fulfillments in life being greater than thriving off the activities I love the most and thus it is my desire to become a Software Engineer or a Systems Engineer if the opportunity presents itself.</p>
-    <p id="id_d"></p> 	
-	<p id="id_d">There will definetly be major improvements and functionality to this site but for the time being, thank you for even visiting it. You can find the interesting stuff on the dashboard. </p> 
-	<img id="salute" src="{{url_for('static',filename='images/salute.svg')}}" alt="">
+    <p id="id_d">As will be made clear from the projects shown on this website, I have a passion for creating technology, whether it be software or hardware or a combination of both. It is my dream to align my passion with my career; I imagine very few fulfillments in life being greater than thriving off the activities I love the most and thus it is my desire to become a Software Engineer or a Systems Engineer if the opportunity presents itself.</p>
+    <p id="id_d">There will definetly be major improvements and functionality to this site but for the time being, thank you for even visiting it. You can find the interesting stuff on the dashboard. </p> 
+    <div class="text-center">
+      <img id="salute" class="img-fluid" src="{{url_for('static',filename='images/salute.svg')}}" alt="salute">
+    </div>
+  </div>
 </div>
-
 {% endblock %}
 

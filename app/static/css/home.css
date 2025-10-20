@@ -1,32 +1,20 @@
 body{
-/*background-color:#00008B;*/
-background-image: url('images2/web_background.jpg');
-background-repeat: no-repeat;
-background-attachment: scroll;
-background-size: 100% 100%;
-background-position: ;/*absolute*/
+  background: linear-gradient(135deg, #0f172a 0%, #111827 40%, #0b1220 100%);
 }
 #iframepdf{
 	height: 1000px;
 	width: 100%;
 }
-#img1{
-	height: 50px;
-	width: 50px;
+.social-icon{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
 }
-#img1:hover{
-height: 55px;
-width: 55px;
+.social-icon:hover{
+    height: 54px;
+    width: 54px;
 }
-#homebody{
-height:max-height;
-width:max-width;
-background-image: url('images2/self.jpg');
-background-repeat: no-repeat;
-background-attachment: scroll;
-background-size: 100% 100%;
-background-position: ;/*absolute*/
-}
+/* Removed page background image for performance */
 #flex{
 display:flex;
 align-items:flex-start;
